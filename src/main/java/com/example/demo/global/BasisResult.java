@@ -52,6 +52,10 @@ public class BasisResult {
         return new BasisResult();
     }
 
+    public static BasisResult Success() {
+        return	BasisResult.Default().setResultCode(BasisResultCode.SUCCESS);
+    }
+
     public static BasisResult Fail() {
         return BasisResult.Default().setResultCode(BasisResultCode.FAIL);
     }
