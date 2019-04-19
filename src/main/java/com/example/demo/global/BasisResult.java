@@ -56,6 +56,10 @@ public class BasisResult {
         return	BasisResult.Default().setResultCode(BasisResultCode.SUCCESS);
     }
 
+    public static BasisResult Success(Object data) {
+        return BasisResult.Success().setData(data);
+    }
+
     public static BasisResult Fail() {
         return BasisResult.Default().setResultCode(BasisResultCode.FAIL);
     }
@@ -70,6 +74,12 @@ public class BasisResult {
 
     public static BasisResult Fail(Object data, BasisResultCode code) {
         return BasisResult.Fail().setData(data).setResultCode(code);
+    }
+
+    public BasisResult error(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+        return this;
     }
 
 
